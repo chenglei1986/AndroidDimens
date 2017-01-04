@@ -48,3 +48,20 @@ Google官方建议我们使用dp来做长度单位，dp又称dip，翻译过来�
 其中sw表示屏幕的最小边长度，这种命名表示只要屏幕的最小边长度超过这个值，那么就使用该文件夹下的dimen进行适配，这样就不用考虑手机是横屏还是竖屏的问题了。
 
 > 注意：网上有的解决方案是使用形如values-1920x1080的文件夹进行适配，这并不在官方建议的范围内，实际使用中也是有问题的，会出现适配错误的情况，即找不到或使用错误的dimen值。
+
+## 用法
+
+```java
+String targetDir = "/dimen_root"; // 生成dimen文件的路径
+int baseScreenWidthPx = 750; // UI设计图的窄边长度（像素）
+DimenGenerator dimenGenerator = new DimenGenerator(targetDir, baseScreenWidthPx);
+// 需要适配的屏幕宽度（dp）
+ArrayList<Integer> screenWidthDipList = new ArrayList<>();
+screenWidthDipList.add(320);
+screenWidthDipList.add(360);
+screenWidthDipList.add(430);
+screenWidthDipList.add(480);
+screenWidthDipList.add(540);
+screenWidthDipList.add(600);
+dimenGenerator.execute(screenWidthDipList);
+```
