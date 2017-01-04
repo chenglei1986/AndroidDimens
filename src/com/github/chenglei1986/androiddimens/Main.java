@@ -10,6 +10,8 @@ public class Main {
         DimenGenerator dimenGenerator = new DimenGenerator(targetDir, baseScreenWidthPx);
         // 需要适配的屏幕宽度（dp）
         ArrayList<Integer> screenWidthDipList = new ArrayList<>();
+        screenWidthDipList.add(160);
+        screenWidthDipList.add(240);
         screenWidthDipList.add(320);
         screenWidthDipList.add(360);
         screenWidthDipList.add(430);
