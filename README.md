@@ -53,10 +53,13 @@ Google官方建议我们使用dp来做长度单位，dp又称dip，翻译过来�
 
 ```java
 String targetDir = "/dimen_root"; // 生成dimen文件的路径
-int baseScreenWidthPx = 750; // UI设计图的窄边长度（像素）
-DimenGenerator dimenGenerator = new DimenGenerator(targetDir, baseScreenWidthPx);
+int baseScreenWidthPx = 750; // UI设计图的屏幕宽度（像素）
+int baseScrrenHeightPx = 1334; // UI设计图的屏幕高度（像素）
+DimenGenerator dimenGenerator = new DimenGenerator(targetDir, baseScreenWidthPx, baseScrrenHeightPx);
 // 需要适配的屏幕宽度（dp）
 ArrayList<Integer> screenWidthDipList = new ArrayList<>();
+screenWidthDipList.add(160);
+screenWidthDipList.add(240);
 screenWidthDipList.add(320);
 screenWidthDipList.add(360);
 screenWidthDipList.add(430);

@@ -10,10 +10,20 @@ public class DimenGenerator {
 
     private final String valuesDirectory;
     private final int baseScreenWidth;
+    private final int baseScreenHeightPx;
 
-    public DimenGenerator(String targetDir, int baseScreenWidthPx) {
+    public DimenGenerator(String targetDir, int baseScreenWidthPx, int baseScreenHeightPx) {
         this.valuesDirectory = targetDir + "/values-sw{width}dp";
         this.baseScreenWidth = baseScreenWidthPx;
+        this.baseScreenHeightPx = baseScreenHeightPx;
+
+        if (null == targetDir) {
+            throw new IllegalArgumentException("targetDir for saving generated files must not be empty!");
+        }
+
+        if (baseScreenWidthPx <= 0 || baseScreenHeightPx <= 0) {
+            throw new IllegalArgumentException("The value of base screen size must be positive!");
+        }
     }
 
     public void execute(ArrayList<Integer> screenWidthDipList) {
@@ -26,7 +36,7 @@ public class DimenGenerator {
             sb.append("<resources>\n");
 
             float dp = (float) screenWidthDip / baseScreenWidth;
-            for (int i = 0; i < 4000; i++) {
+            for (int i = 0; i < baseScreenHeightPx; i++) {
                 sb.append("    <dimen name=\"w_");
                 sb.append(String.valueOf(i + 1));
                 sb.append("px\">");
