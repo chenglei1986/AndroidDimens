@@ -75,4 +75,4 @@ dimenGenerator.execute(screenWidthDipList);
 
 `java -jar AndroidDimens.jar -b 1920,1080 -o E:\dimen_values -s 320,360,480`
 
-You can use `java -jar AndroidDimens.jar -h|-?` for help.
+可以使用 `java -jar AndroidDimens.jar -h|-?` 查看帮助
