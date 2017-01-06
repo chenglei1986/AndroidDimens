@@ -51,6 +51,8 @@ Google官方建议我们使用dp来做长度单位，dp又称dip，翻译过来�
 
 ## 用法
 
+### Java Code
+
 ```java
 String targetDir = "/dimen_root"; // 生成dimen文件的路径
 int baseScreenWidthPx = 750; // UI设计图的屏幕宽度（像素）
@@ -68,3 +70,9 @@ screenWidthDipList.add(540);
 screenWidthDipList.add(600);
 dimenGenerator.execute(screenWidthDipList);
 ```
+
+### Command Line
+
+`java -jar AndroidDimens.jar -b 1920,1080 -o E:\dimen_values -s 320,360,480`
+
+You can use `java -jar AndroidDimens.jar -h|-?` for help.

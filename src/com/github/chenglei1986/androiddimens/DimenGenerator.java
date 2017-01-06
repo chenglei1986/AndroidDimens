@@ -8,17 +8,17 @@ import java.util.ArrayList;
 
 public class DimenGenerator {
 
-    private final String valuesDirectory;
+    private final String outputPath;
     private final int baseScreenWidth;
     private final int baseScreenHeightPx;
 
-    public DimenGenerator(String targetDir, int baseScreenWidthPx, int baseScreenHeightPx) {
-        this.valuesDirectory = targetDir + "/values-sw{width}dp";
+    public DimenGenerator(String outputPath, int baseScreenWidthPx, int baseScreenHeightPx) {
+        this.outputPath = outputPath + "/values-sw{width}dp";
         this.baseScreenWidth = baseScreenWidthPx;
         this.baseScreenHeightPx = baseScreenHeightPx;
 
-        if (null == targetDir) {
-            throw new IllegalArgumentException("targetDir for saving generated files must not be empty!");
+        if (null == outputPath) {
+            throw new IllegalArgumentException("outputPath for saving generated files must not be empty!");
         }
 
         if (baseScreenWidthPx <= 0 || baseScreenHeightPx <= 0) {
@@ -28,7 +28,7 @@ public class DimenGenerator {
 
     public void execute(ArrayList<Integer> screenWidthDipList) {
         for (int screenWidthDip : screenWidthDipList) {
-            String dimenRootPath = valuesDirectory.replace("{width}", String.valueOf(screenWidthDip));
+            String dimenRootPath = outputPath.replace("{width}", String.valueOf(screenWidthDip));
             String dimenPath = dimenRootPath + "/dimens.xml";
 
             StringBuffer sb = new StringBuffer();
