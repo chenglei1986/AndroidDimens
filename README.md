@@ -30,11 +30,11 @@ Google官方建议我们使用dp来做长度单位，dp又称dip，翻译过来�
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="w_1px">0.42666668dp</dimen>
-    <dimen name="w_2px">0.85333335dp</dimen>
-    <dimen name="w_3px">1.28dp</dimen>
-    <dimen name="w_4px">1.7066667dp</dimen>
-    <dimen name="w_5px">2.1333334dp</dimen>
+    <dimen name="px1">0.42666668dp</dimen>
+    <dimen name="px2">0.85333335dp</dimen>
+    <dimen name="px3">1.28dp</dimen>
+    <dimen name="px4">1.7066667dp</dimen>
+    <dimen name="px5">2.1333334dp</dimen>
     ......
 </resources>
 ```
@@ -54,21 +54,27 @@ Google官方建议我们使用dp来做长度单位，dp又称dip，翻译过来�
 ### Java Code
 
 ```java
-String targetDir = "/dimen_root"; // 生成dimen文件的路径
-int baseScreenWidthPx = 750; // UI设计图的屏幕宽度（像素）
-int baseScrrenHeightPx = 1334; // UI设计图的屏幕高度（像素）
-DimenGenerator dimenGenerator = new DimenGenerator(targetDir, baseScreenWidthPx, baseScrrenHeightPx);
-// 需要适配的屏幕宽度（dp）
-ArrayList<Integer> screenWidthDipList = new ArrayList<>();
-screenWidthDipList.add(160);
-screenWidthDipList.add(240);
-screenWidthDipList.add(320);
-screenWidthDipList.add(360);
-screenWidthDipList.add(430);
-screenWidthDipList.add(480);
-screenWidthDipList.add(540);
-screenWidthDipList.add(600);
-dimenGenerator.execute(screenWidthDipList);
+public class Main {
+    
+    public static final void main(String[] args) {
+        String targetDir = "/dimen_root"; // 生成dimen文件的路径
+        int baseScreenWidthPx = 750; // UI设计图的屏幕宽度（像素）
+        int baseScrrenHeightPx = 1334; // UI设计图的屏幕高度（像素）
+        DimenGenerator dimenGenerator = new DimenGenerator(targetDir, baseScreenWidthPx, baseScrrenHeightPx);
+        // 需要适配的屏幕宽度（dp）
+        ArrayList<Integer> screenWidthDipList = new ArrayList<>();
+        screenWidthDipList.add(160);
+        screenWidthDipList.add(240);
+        screenWidthDipList.add(320);
+        screenWidthDipList.add(360);
+        screenWidthDipList.add(430);
+        screenWidthDipList.add(480);
+        screenWidthDipList.add(540);
+        screenWidthDipList.add(600);
+        dimenGenerator.execute(screenWidthDipList);
+    }
+
+}
 ```
 
 ### Command Line
@@ -76,3 +82,7 @@ dimenGenerator.execute(screenWidthDipList);
 `java -jar AndroidDimens.jar -b 1920,1080 -o E:\dimen_values -s 320,360,480`
 
 可以使用 `java -jar AndroidDimens.jar -h|-?` 查看帮助
+
+## JAR包下载
+
+[AndroidDimens.jar](./jar/AndroidDimens.jar)

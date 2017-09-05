@@ -37,9 +37,9 @@ public class DimenGenerator {
 
             float dp = (float) screenWidthDip / baseScreenWidth;
             for (int i = 0; i < baseScreenHeightPx; i++) {
-                sb.append("    <dimen name=\"w_");
+                sb.append("    <dimen name=\"px");
                 sb.append(String.valueOf(i + 1));
-                sb.append("px\">");
+                sb.append("\">");
                 sb.append(dp * (i + 1));
                 sb.append("dp</dimen>\n");
             }
