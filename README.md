@@ -79,10 +79,10 @@ public class Main {
 
 ### Command Line
 
-`java -jar AndroidDimens.jar -b 1920,1080 -o E:\dimen_values -s 320,360,480`
+`java -jar AndroidDimens-1.0.0.jar -b 1920,1080 -o E:\dimen_values -s 320,360,480`
 
-可以使用 `java -jar AndroidDimens.jar -h|-?` 查看帮助
+可以使用 `java -jar AndroidDimens-1.0.0.jar -h|-?` 查看帮助
 
 ## JAR包下载
 
-[AndroidDimens.jar](./jar/AndroidDimens.jar)
+[AndroidDimens.jar](./jar/AndroidDimens-1.0.0.jar)
