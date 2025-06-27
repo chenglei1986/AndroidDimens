@@ -38,7 +38,7 @@ public class DimenGenerator {
             float dp = (float) screenWidthDip / baseScreenWidth;
             for (int i = 0; i < baseScreenHeightPx; i++) {
                 sb.append("    <dimen name=\"px");
-                sb.append(String.valueOf(i + 1));
+                sb.append(i + 1);
                 sb.append("\">");
                 sb.append(dp * (i + 1));
                 sb.append("dp</dimen>\n");
@@ -52,7 +52,7 @@ public class DimenGenerator {
             File dimen = new File(dimenPath);
             try {
                 PrintWriter pw = new PrintWriter(new FileOutputStream(dimen));
-                pw.print(sb.toString());
+                pw.print(sb);
                 pw.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

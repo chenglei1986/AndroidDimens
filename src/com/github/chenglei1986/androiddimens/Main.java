@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String outputPath = "/dimen_root"; // 生成dimen文件的路径
+        String outputPath = "./dimen_root"; // 生成dimen文件的路径
         int baseScreenWidthPx = 1080; // UI设计图的屏幕宽度（像素）
         int baseScreenHeightPx = 1920; // UI设计图的屏幕高度（像素）
         ArrayList<Integer> targetScreenWidthDipList = new ArrayList<>(); // 需要适配的屏幕宽度（dp）
@@ -20,6 +20,11 @@ public class Main {
             targetScreenWidthDipList.add(480);
             targetScreenWidthDipList.add(540);
             targetScreenWidthDipList.add(600);
+            targetScreenWidthDipList.add(640);
+            targetScreenWidthDipList.add(720);
+            targetScreenWidthDipList.add(800);
+            targetScreenWidthDipList.add(840);
+            targetScreenWidthDipList.add(960);
         } else {
             try {
                 for (int i = 0; i < args.length; i++) {
